@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reciclando Sabores</title>
+    <style>
+      :root {
+        --verde: #4caf50;
+        --verde-escuro: #388e3c;
+        --creme: #fffdf5;
+        --cinza: #555;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+      }
+      body {
+        background: var(--creme);
+        color: var(--cinza);
+        line-height: 1.6;
+      }
+      header {
+        background: var(--verde);
+        color: #fff;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      nav {
+        max-width: 960px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+        flex-wrap: wrap;
+      }
+      nav h1 {
+        font-size: 1.6rem;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      #hero {
+        background: url("https://images.unsplash.com/photo-1546069901-eacef0df6022?auto=format&fit=crop&w=1920&q=60") center/cover no-repeat;
+        height: 55vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        padding: 0 1rem;
+      }
+      #hero h2 {
+        font-size: 2.4rem;
+        margin-bottom: 0.8rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      }
+      #hero p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      }
+      .btn {
+        background: var(--verde-escuro);
+        color: #fff;
+        padding: 0.7rem 1.4rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background 0.3s ease;
+        margin-top: 1.3rem;
+        font-size: 1rem;
+      }
+      .btn:hover {
+        background: #2e7d32;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 3rem auto;
+        padding: 0 1rem;
+      }
+      .container h2 {
+        color: var(--verde-escuro);
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+      .card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+      .card-body {
+        padding: 1rem 1.2rem 1.4rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .card-body h3 {
+        margin-bottom: 0.4rem;
+        color: var(--verde-escuro);
+        font-size: 1.2rem;
+      }
+      .card-body .meta {
+        font-size: 0.85rem;
+        margin-bottom: 0.6rem;
+        color: #777;
+      }
+      .card-body ul {
+        margin-left: 1.2rem;
+        margin-bottom: 0.8rem;
+      }
+      .card-body p {
+        font-size: 0.95rem;
+      }
+      footer {
+        background: var(--verde-escuro);
+        color: #fff;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 3rem;
+      }
+      @media (max-width: 600px) {
+        nav ul {
+          flex-direction: column;
+          gap: 0.5rem;
+          margin-top: 0.5rem;
+        }
+        #hero h2 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Reciclando Sabores</h1>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#receitas">Receitas</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="hero">
+      <h2>Dê uma segunda chance aos alimentos</h2>
+      <p>Transforme cascas, talos e sementes em pratos deliciosos e sustentáveis.</p>
+      <a href="#receitas" class="btn">Ver Receitas</a>
+    </section>
+
+    <section id="sobre" class="container">
+      <h2>Sobre o Projeto</h2>
+      <p>
+        Todos os anos, toneladas de alimentos são descartadas no lixo, mesmo estando aptas ao consumo. Nosso objetivo é inspirar você a reduzir o desperdício através de receitas criativas que utilizam partes normalmente jogadas fora. Preservar recursos naturais, economizar dinheiro e descobrir novos sabores: tudo isso começa na sua cozinha.
+      </p>
+    </section>
+
+    <section id="receitas" class="container">
+      <h2>Receitas de Aproveitamento Integral</h2>
+      <div class="grid">
+        <!-- Brigadeiro de Casca de Banana -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=60" alt="Brigadeiro de casca de banana" />
+          <div class="card-body">
+            <h3>Brigadeiro de Casca de Banana</h3>
+            <div class="meta">Tempo: 25 min | Dificuldade: Fácil</div>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+              <li>2 xícaras de casca de banana picada</li>
+              <li>1 lata de leite condensado</li>
+              <li>2 colheres (sopa) de cacau em pó</li>
+              <li>1 colher (sopa) de manteiga</li>
+            </ul>
+            <p><strong>Modo de preparo:</strong> Refogue a casca na manteiga, acrescente leite condensado e cacau. Mexa até desgrudar do fundo. Deixe esfriar, enrole e passe no granulado.</p>
+          </div>
+        </div>
+        <!-- Doce de Casca de Laranja -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1603122435809-747cdf4bc8b2?auto=format&fit=crop&w=800&q=60" alt="Doce de casca de laranja" />
+          <div class="card-body">
+            <h3>Doce de Casca de Laranja</h3>
+            <div class="meta">Tempo: 40 min | Dificuldade: Fácil</div>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+              <li>Cascas de 3 laranjas cortadas em tiras</li>
+              <li>1 xícara de açúcar</li>
+              <li>2 xícaras de água</li>
+              <li>Cravos-da-índia a gosto</li>
+            </ul>
+            <p><strong>Modo de preparo:</strong> Ferva as cascas por 5 min, descarte a água. Faça calda com açúcar, água e cravo, junte as cascas e cozinhe até ficarem translúcidas.</p>
+          </div>
+        </div>
+        <!-- Geleia de Casca de Melão -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1609019869414-daf51f9f20c6?auto=format&fit=crop&w=800&q=60" alt="Geleia de casca de melão" />
+          <div class="card-body">
+            <h3>Geleia de Casca de Melão</h3>
+            <div class="meta">Tempo: 50 min | Dificuldade: Fácil</div>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+              <li>3 xícaras de casca de melão ralada</li>
+              <li>1½ xícara de açúcar</li>
+              <li>Suco de 1 limão</li>
+            </ul>
+            <p><strong>Modo de preparo:</strong> Cozinhe todos os ingredientes em fogo baixo, mexendo, até atingir ponto de geleia (cerca de 45 min). Armazene em pote esterilizado.</p>
+          </div>
+        </div>
+        <!-- Sorvete de Manga com Casca -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1625947808675-bde86ebbf848?auto=format&fit=crop&w=800&q=60" alt="Sorvete de manga com casca" />
+          <div class="card-body">
+            <h3>Sorvete de Manga com Casca</h3>
+            <div class="meta">Tempo: 4 h | Dificuldade: Médio</div>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+              <li>3 mangas com casca, em cubos congelados</li>
+              <li>200 ml de iogurte natural</li>
+              <li>2 colheres (sopa) de mel</li>
+            </ul>
+            <p><strong>Modo de preparo:</strong> Bata todos os ingredientes no processador até cremoso. Leve ao freezer por 3 h, mexendo a cada 1 h para evitar cristais.</p>
+          </div>
+        </div>
+        <!-- Risoto de Casca de Abóbora -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1631362519040-a827e0843ccb?auto=format&fit=crop&w=800&q=60" alt="Risoto de casca de abóbora" />
+          <div class="card-body">
+            <h3>Risoto de Casca de Abóbora</h3>
+            <div class="meta">Tempo: 35 min | Dificuldade: Médio</div>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+              <li>1 xícara de casca de abóbora em cubinhos</li>
+              <li>1 xícara de arroz arbóreo</li>
+              <li>½ cebola picada</li>
+              <li>½ xícara de vinho branco</li>
+              <li>Caldo de legumes quente (aprox. 1 l)</li>
+              <li>2 colheres (sopa) de manteiga</li>
+              <li>50 g parmesão ralado</li>
+            </ul>
+            <p><strong>Modo de preparo:</strong> Refogue cebola, junte arroz e cascas. Deglaceie com vinho. Adicione caldo aos poucos, mexendo, até o arroz ficar al dente. Finalize com manteiga e parmesão.</p>
+          </div>
+        </div>
+        <!-- Creme de Folhas de Couve-Flor -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1601050543272-0a46b2e3b5c9?auto=format&fit=crop&w=800&q=60" alt="Creme de folhas de couve-flor" />
+          <div class="card-body">
+            <h3>Creme de Folhas de Couve‑Flor</h3>
+            <div class="meta">Tempo: 30 min | Dificuldade: Fácil</div>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+              <li>Folhas de 1 couve-flor</li>
+              <li>1 batata em cubos</li>
+              <li>1 alho-poró fatiado</li>
+              <li>1 litro de água ou caldo</li>
+              <li>Sal, pimenta e noz-moscada</li>
+            </ul>
+            <p><strong>Modo de preparo:</strong> Refogue alho-poró, junte folhas e batata. Cubra com caldo, cozinhe até macio. Bata no liquidificador, ajuste temperos e sirva.</p>
+          </div>
+        </div>
+        <!-- Macarrão com Ramas de Cenoura -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=60" alt="Macarrão com ramas de cenoura" />
+          <div class="card-body">
+            <h3>Macarrão com Ramas de Cenoura</h3>
+            <div class="meta">Tempo: 20 min | Dificuldade: Fácil</div>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+              <li>250 g de macarrão</li>
+              <li>1 xícara de ramas de cenoura picadas</li>
+              <li>2 dentes de alho</li>
+              <li>3 colheres (sopa) de azeite</li>
+              <li>Sal e pimenta</li>
+            </ul>
+            <p><strong>Modo de preparo:</strong> Cozinhe o macarrão. Salteie alho e ramas no azeite, misture a massa e ajuste temperos. Finalize com queijo a gosto.</p>
+          </div>
+        </div>
+        <!-- Bolo de Casca de Laranja -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=800&q=60" alt="Bolo de casca de laranja" />
+          <div class="card-body">
+            <h3>Bolo de Casca de Laranja</h3>
+            <div class="meta">Tempo: 45 min | Dificuldade: Médio</div>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+              <li>Cascas de 2 laranjas bem lavadas</li>
+              <li>3 ovos</li>
+              <li>2 xícaras de açúcar mascavo</li>
+              <li>2½ xícaras de farinha de trigo</li>
+              <li>½ xícara de óleo</li>
+              <li>1 colher (sopa) de fermento químico</li>
+            </ul>
+            <p><strong>Modo de preparo:</strong> Bata cascas, ovos, óleo e açúcar no liquidificador. Misture farinha e fermento, asse a 180 °C por 35‑40 min.</p>
+          </div>
+        </div>
+        <!-- Chips de Casca de Batata -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1585238342029-7a3c29c3c3f0?auto=format&fit=crop&w=800&q=60" alt="Chips de casca de batata" />
+          <div class="card-body">
+            <h3>Chips de Casca de Batata</h3>
+            <div class="meta">Tempo: 15 min | Dificuldade: Fácil</div>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+              <li>Cascas de 4 batatas</li>
+              <li>2 colheres (sopa) de azeite</li>
+              <li>Sal e páprica</li>
+            </ul>
+            <p><strong>Modo de preparo:</strong> Tempere cascas, asse em forno alto 12‑15 min, virando na metade.</p>
+          </div>
+        </div>
+        <!-- Caldo Concentrado de Talos -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1514846326717-096ec918317b?auto=format&fit=crop&w=800&q=60" alt="Caldo de talos" />
+          <div class="card-body">
+            <h3>Caldo Concentrado de Talos</h3>
+            <div class="meta">Tempo: 45 min | Dificuldade: Fácil</div>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+              <li>Talos variados (couve, brócolis, salsão)</li>
+              <li>1 cenoura em rodelas</li>
+              <li>1 cebola</li>
+              <li>Ervas</li>
+              <li>2 l de água</li>
+            </ul>
+            <p><strong>Modo de preparo:</strong> Refogue cebola, adicione talos e cenoura, cubra com água, cozinhe 40 min. Coe e utilize.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="container">
+      <h2>Contato e Compartilhamento</h2>
+      <p>Gostou das receitas ou tem sugestões? Escreva para nós e siga @reciclando.sabores nas redes sociais.</p>
+      <form action="https://formspree.io/f/yourFormID" method="POST">
+        <input type="text" name="name" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail
